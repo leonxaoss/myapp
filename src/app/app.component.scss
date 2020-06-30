@@ -1,0 +1,22 @@
+.task_block{
+  font-family: sans-serif;
+  padding: 50px;
+  line-height: 24px;
+  font-size: 16px;
+  p{
+    a{
+      color: #225ce0;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    width: 50%;
+  }
+}
+.task_img__box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.task_img{
+  width: 20%;
+}
