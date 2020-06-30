@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "synebo": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "synebo"
+    }
+  },
+  "defaultProject": "synebo",
+  "cli": {
+    "analytics": "e9efcbc3-e3d7-4b66-bee6-f32ab4b1e4e8"
+  }
 }

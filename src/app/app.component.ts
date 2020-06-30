@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './services/app.service';
-import Unsplash from 'unsplash-js';
+import { toJson } from 'unsplash-js';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,26 +11,21 @@ import Unsplash from 'unsplash-js';
 export class AppComponent implements OnInit {
   title = 'synebo';
   arr = [];
-  key = 'rYLteWpuM1687P8NfECHBDulPx4hQ8wskT-oRveVCe8';
+  isLoad = true;
 
-  private unsplash = new Unsplash({ accessKey: this.key });
   constructor(private appService: AppService) {}
-  ngOnInit() {
-    this.appService.getAll().subscribe((resp: any) => {
-      console.log(resp);
-      this.arr = resp;
-    });
 
-
-    this.unsplash = new Unsplash({
-      accessKey: this.key,
-      headers: {
-        'X-Custom-Header': 'foo'
-      },
-      timeout: 500
-    });
-
-    console.log(this.unsplash);
+  ngOnInit(): void {
+    this.appService.getPhotos(1, 10)
+      .then(toJson)
+      .then(json => {
+        this.arr = json;
+        console.log(this.arr);
+      })
+      .catch((err: HttpErrorResponse) => console.error(err))
+      .finally(() => {
+        this.isLoad = false;
+      });
   }
 
 }

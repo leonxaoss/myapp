@@ -1,0 +1,14 @@
+.preload_block{
+  width: 50px;
+  height: 50px;
+  background: #225ce0;
+  animation: load 2s linear infinite;
+}
+@keyframes load {
+  0%{
+    transform: rotate(0turn);
+  }
+  100%{
+    transform: rotate(1turn);
+  }
+}

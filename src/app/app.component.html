@@ -1,13 +1,14 @@
 <div class="task_block">
-  <p>Зарегистрироваться на <a href="https://unsplash.com/developers">https://unsplash.com/developers</a>, создать свой application, и использовать их REST API для того, чтобы отобразить на своей страничке некоторые изображения. Для использования REST API с сайта применить
-    <a href="https://github.com/unsplash/unsplash-js">https://github.com/unsplash/unsplash-js</a>
+  <p>Зарегистрироваться на <a target="_blank" href="https://unsplash.com/developers">https://unsplash.com/developers</a>, создать свой application, и использовать их REST API для того, чтобы отобразить на своей страничке некоторые изображения. Для использования REST API с сайта применить
+    <a target="_blank" href="https://github.com/unsplash/unsplash-js">https://github.com/unsplash/unsplash-js</a>
     Обязательное условие - использовать Promise. Необходимо использовать Promise для поучения данных с сервера, и создавать элемент изображения на своей странице с прелоадером и обязательно отлавливать ошибки.
     Результат выполненного задания предоставить ссылкой на git репозиторий.
     Дополнительным плюсом будет выполнение задания с помощью JS-фреймворка или использование Gulp/Webpack/Grunt etc..</p>
 </div>
+<app-preload *ngIf="isLoad"></app-preload>
 <div class="task_img__box">
   <div *ngFor="let item of arr" class="task_img">
-    <img src="{{item.urls.full}}" alt="">
+    <img [src]="item.urls.full" [alt]="item.alt_description">
   </div>
 </div>
 
