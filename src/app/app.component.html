@@ -8,7 +8,7 @@
 <app-preload *ngIf="isLoad"></app-preload>
 <div class="task_img__box">
   <div *ngFor="let item of arr" class="task_img">
-    <img [src]="item.urls.full" [alt]="item.alt_description">
+    <img [src]="item.urls.small" [alt]="item.alt_description">
   </div>
 </div>
 
